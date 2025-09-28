@@ -20,9 +20,12 @@ console.log('✅ Build completed successfully');
 try {
   await mkdir('./dist', { recursive: true });
   
-  // Copy HTML file
+  // Copy HTML file and update script path
   const htmlContent = await import('fs').then(fs => fs.readFileSync('./index.html', 'utf8'));
-  await writeFile('./dist/index.html', htmlContent);
+  const updatedHtml = htmlContent
+    .replace('/src/main.tsx', './main.js')
+    .replace('</title>', '</title>\n    <link rel="stylesheet" href="./main.css">');
+  await writeFile('./dist/index.html', updatedHtml);
   
   // Copy sanitizer profile
   const profileContent = await import('fs').then(fs => fs.readFileSync('./sanitizer-profile.json', 'utf8'));
