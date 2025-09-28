@@ -1,0 +1,69 @@
+{
+  "version": "1.2",
+  "normalize": "NFC", 
+  "nfkc_compat": false,
+  "collapse_whitespace": true,
+  "strip_markup": {
+    "html_xml": true,
+    "markdown": true,
+    "code_fences": true
+  },
+  "remove_categories": {
+    "Cc_controls": true,
+    "Cf_format_controls": true,
+    "Cs_surrogates": true
+  },
+  "remove_noncharacters": true,
+  "remove_private_use": "all", 
+  "remove_isolated_combining_marks": true,
+  "strip_directionality_controls": true,
+  "strip_soft_hyphen_discretionary": true,
+  "strip_invisible_separators": true,
+  "strip_tag_chars": true,
+  "strip_variation_selectors": "emoji_safekeep", 
+  "strip_bom_anywhere": true,
+  "language_overrides": {
+    "ar": {
+      "allow": ["\u200D", "\u200C"], 
+      "comments": "ZWJ/ZWNJ allowed for Arabic shaping exceptions."
+    },
+    "fa": {
+      "allow": ["\u200D", "\u200C"]
+    },
+    "ur": {
+      "allow": ["\u200D", "\u200C"]
+    },
+    "hi": {
+      "allow": ["\u200D", "\u200C"]
+    },
+    "bn": {
+      "allow": ["\u200D", "\u200C"]
+    },
+    "ml": {
+      "allow": ["\u200D", "\u200C"]
+    },
+    "ta": {
+      "allow": ["\u200D", "\u200C"]
+    },
+    "te": {
+      "allow": ["\u200D", "\u200C"]
+    },
+    "th": {
+      "allow": ["\u200B"], 
+      "comments": "ZWSP permitted for Thai line-break hints."
+    },
+    "km": {
+      "allow": ["\u200B"]
+    }
+  },
+  "hard_allowlist": [
+    "\uFE0E", 
+    "\uFE0F"  
+  ],
+  "hard_blocklist": [
+    "\u2060",   
+    "\u00AD",   
+    "\u180E",   
+    "\uFEFF"    
+  ]
+}
