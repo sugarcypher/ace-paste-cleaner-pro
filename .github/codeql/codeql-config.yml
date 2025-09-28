@@ -1,0 +1,24 @@
+name: "CodeQL Config"
+
+# Disable Ruby analysis since this is a JavaScript/TypeScript project
+disable-default-rules: false
+
+# Only analyze JavaScript/TypeScript
+languages:
+  - javascript
+  - typescript
+
+# Exclude node_modules and build artifacts
+paths-ignore:
+  - "node_modules/**"
+  - "dist/**"
+  - "build/**"
+  - ".git/**"
+
+# Include only source files
+paths:
+  - "src/**"
+  - "*.js"
+  - "*.ts"
+  - "*.tsx"
+  - "*.jsx"
