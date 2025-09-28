@@ -1,8 +1,19 @@
 import { build } from 'bun';
 import { readdir, mkdir, writeFile } from 'fs/promises';
 import { join } from 'path';
+import { execSync } from 'child_process';
 
 console.log('🔨 Building ACE Paste Cleaner Pro...');
+
+// Process CSS with Tailwind
+console.log('🎨 Processing CSS with Tailwind...');
+try {
+  execSync('bunx tailwindcss -i ./src/index.css -o ./dist/main.css --minify', { stdio: 'inherit' });
+  console.log('✅ CSS processed successfully');
+} catch (error) {
+  console.error('❌ CSS processing failed:', error.message);
+  process.exit(1);
+}
 
 // Build the application
 const result = await build({

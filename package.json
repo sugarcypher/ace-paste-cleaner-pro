@@ -5,7 +5,7 @@
   "type": "module",
   "main": "index.html",
   "scripts": {
-    "dev": "bun run --hot src/main.tsx",
+    "dev": "bun run build && python3 -m http.server 5173 --directory dist",
     "build": "bun run build.js",
     "preview": "python3 -m http.server 5173 --directory dist"
   },
